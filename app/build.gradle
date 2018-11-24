@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "com.gauravgarg.ixigo"
+        applicationId "com.gauravgarg.builditbigger"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    buildTypes.each {
+//        it.buildConfigField 'String', '192.168.1.7', YOUR_COMPUTER_IP_ADDRESS
+//    }
 }
 
 dependencies {
@@ -24,17 +27,25 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     //compile project ':javaJokes'
-    compile "com.android.support:design:25.3.1"
-    compile "com.android.support:cardview-v7:25.3.1"
-    compile "com.android.support:recyclerview-v7:25.3.1"
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.loopj.android:android-async-http:1.4.9'
-    testCompile 'junit:junit:4.12'
+
 
     compile project(path: ':javajokes')
     compile project(path: ':androidlibrary')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+    testCompile 'junit:junit:4.12'
+    compile project(path: ':servelet-backend', configuration: 'android-endpoints')
+    //compile 'com.google.http-client:google-http-client-android:1.27.0'
+    compile ('com.google.api-client:google-api-client:1.22.0'){
+        exclude module: 'httpcore'
+        exclude module: 'httpclient'
+    }
 }
