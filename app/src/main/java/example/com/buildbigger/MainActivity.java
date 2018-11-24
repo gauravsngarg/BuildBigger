@@ -10,7 +10,6 @@ import android.widget.Toast;
 import com.example.Joker;
 
 import example.com.androidlibrary.MainLibraryActivity;
-import example.com.buildbigger.cloud.ServletPostAsyncTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,9 +32,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        new ServletPostAsyncTask().execute(MainActivity.this);
     }
-
 }
